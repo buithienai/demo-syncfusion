@@ -10,6 +10,20 @@ const sortSettings = { columns: [
 
 class App extends Component {
 
+	handleClick = () => {
+		alert(123);
+	}
+
+	renderButton = (props) => {
+		console.log(props.Status);
+		return (
+			<div>
+				<button onClick={this.handleClick}>
+					<span>{props.Status}</span>
+				</button>
+			</div>
+		);
+	}
 
 	render() {
 		return (
@@ -31,6 +45,7 @@ class App extends Component {
 					<ColumnDirective field='Status' width='100'/>
 					<ColumnDirective field='AssignedTo' width='100'/>
 					<ColumnDirective field='Note' />
+					<ColumnDirective field='Status' headerText='Action' width='180' template={this.renderButton} textAlign='Center' />
 				</ColumnsDirective>
 				<Inject services={[Page, Sort, Filter, Group]} />
 			</GridComponent>
