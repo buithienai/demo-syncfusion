@@ -3,7 +3,7 @@ import { ColumnDirective, ColumnsDirective, Filter, GridComponent, Group, Inject
 import { hardwareData } from './datasource';
 import './App.css';
 
-const pageSettings = { pageSize: 6 }
+const pageSettings = { pageSize: 10 }
 const sortSettings = { columns: [
 	{field: 'TaskID', direction: 'Ascending' }
 ]};
